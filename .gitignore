@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+
+# Secrets and environment variables
+.env
+.env.*
+!.env.example
+
+# Django generated files
+staticfiles/
+media/
+db.sqlite3
+
+# macOS and editors
+.DS_Store
+.vscode/
+.idea/
+
+# Logs and test output
+*.log
+.pytest_cache/
+.coverage
+htmlcov/

@@ -1,0 +1,734 @@
+[
+ {
+  "name": {
+   "common": "India",
+   "official": "India"
+  },
+  "cca3": "IND",
+  "capital": [
+   "New Delhi"
+  ],
+  "region": "Asia",
+  "subregion": "",
+  "population": 1417492000,
+  "area": 3287590,
+  "flag": "🇮🇳",
+  "languages": {
+   "eng": "English",
+   "hin": "Hindi"
+  },
+  "currencies": {
+   "INR": {
+    "name": "Indian rupee",
+    "symbol": "₹"
+   }
+  }
+ },
+ {
+  "name": {
+   "common": "China",
+   "official": "China"
+  },
+  "cca3": "CHN",
+  "capital": [
+   "Beijing"
+  ],
+  "region": "Asia",
+  "subregion": "",
+  "population": 1402112000,
+  "area": 9706961,
+  "flag": "🇨🇳",
+  "languages": {
+   "zho": "Chinese"
+  },
+  "currencies": {
+   "CNY": {
+    "name": "Chinese yuan",
+    "symbol": "¥"
+   }
+  }
+ },
+ {
+  "name": {
+   "common": "United States",
+   "official": "United States"
+  },
+  "cca3": "USA",
+  "capital": [
+   "Washington, D.C."
+  ],
+  "region": "Americas",
+  "subregion": "",
+  "population": 329484123,
+  "area": 9372610,
+  "flag": "🇺🇸",
+  "languages": {
+   "eng": "English"
+  },
+  "currencies": {
+   "USD": {
+    "name": "United States dollar",
+    "symbol": "$"
+   }
+  }
+ },
+ {
+  "name": {
+   "common": "Indonesia",
+   "official": "Indonesia"
+  },
+  "cca3": "IDN",
+  "capital": [
+   "Jakarta"
+  ],
+  "region": "Asia",
+  "subregion": "",
+  "population": 273523621,
+  "area": 1904569,
+  "flag": "🇮🇩",
+  "languages": {
+   "ind": "Indonesian"
+  },
+  "currencies": {
+   "IDR": {
+    "name": "Indonesian rupiah",
+    "symbol": "Rp"
+   }
+  }
+ },
+ {
+  "name": {
+   "common": "Pakistan",
+   "official": "Pakistan"
+  },
+  "cca3": "PAK",
+  "capital": [
+   "Islamabad"
+  ],
+  "region": "Asia",
+  "subregion": "",
+  "population": 220892331,
+  "area": 881912,
+  "flag": "🇵🇰",
+  "languages": {
+   "eng": "English",
+   "urd": "Urdu"
+  },
+  "currencies": {
+   "PKR": {
+    "name": "Pakistani rupee",
+    "symbol": "₨"
+   }
+  }
+ },
+ {
+  "name": {
+   "common": "Brazil",
+   "official": "Brazil"
+  },
+  "cca3": "BRA",
+  "capital": [
+   "Brasília"
+  ],
+  "region": "Americas",
+  "subregion": "",
+  "population": 212559409,
+  "area": 8515767,
+  "flag": "🇧🇷",
+  "languages": {
+   "por": "Portuguese"
+  },
+  "currencies": {
+   "BRL": {
+    "name": "Brazilian real",
+    "symbol": "R$"
+   }
+  }
+ },
+ {
+  "name": {
+   "common": "Nigeria",
+   "official": "Nigeria"
+  },
+  "cca3": "NGA",
+  "capital": [
+   "Abuja"
+  ],
+  "region": "Africa",
+  "subregion": "",
+  "population": 206139587,
+  "area": 923768,
+  "flag": "🇳🇬",
+  "languages": {
+   "eng": "English"
+  },
+  "currencies": {
+   "NGN": {
+    "name": "Nigerian naira",
+    "symbol": "₦"
+   }
+  }
+ },
+ {
+  "name": {
+   "common": "Bangladesh",
+   "official": "Bangladesh"
+  },
+  "cca3": "BGD",
+  "capital": [
+   "Dhaka"
+  ],
+  "region": "Asia",
+  "subregion": "",
+  "population": 164689383,
+  "area": 147570,
+  "flag": "🇧🇩",
+  "languages": {
+   "ben": "Bengali"
+  },
+  "currencies": {
+   "BDT": {
+    "name": "Bangladeshi taka",
+    "symbol": "৳"
+   }
+  }
+ },
+ {
+  "name": {
+   "common": "Russia",
+   "official": "Russia"
+  },
+  "cca3": "RUS",
+  "capital": [
+   "Moscow"
+  ],
+  "region": "Europe",
+  "subregion": "",
+  "population": 144104080,
+  "area": 17098242,
+  "flag": "🇷🇺",
+  "languages": {
+   "rus": "Russian"
+  },
+  "currencies": {
+   "RUB": {
+    "name": "Russian ruble",
+    "symbol": "₽"
+   }
+  }
+ },
+ {
+  "name": {
+   "common": "Mexico",
+   "official": "Mexico"
+  },
+  "cca3": "MEX",
+  "capital": [
+   "Mexico City"
+  ],
+  "region": "Americas",
+  "subregion": "",
+  "population": 128932753,
+  "area": 1964375,
+  "flag": "🇲🇽",
+  "languages": {
+   "spa": "Spanish"
+  },
+  "currencies": {
+   "MXN": {
+    "name": "Mexican peso",
+    "symbol": "$"
+   }
+  }
+ },
+ {
+  "name": {
+   "common": "Japan",
+   "official": "Japan"
+  },
+  "cca3": "JPN",
+  "capital": [
+   "Tokyo"
+  ],
+  "region": "Asia",
+  "subregion": "",
+  "population": 125836021,
+  "area": 377930,
+  "flag": "🇯🇵",
+  "languages": {
+   "jpn": "Japanese"
+  },
+  "currencies": {
+   "JPY": {
+    "name": "Japanese yen",
+    "symbol": "¥"
+   }
+  }
+ },
+ {
+  "name": {
+   "common": "Ethiopia",
+   "official": "Ethiopia"
+  },
+  "cca3": "ETH",
+  "capital": [
+   "Addis Ababa"
+  ],
+  "region": "Africa",
+  "subregion": "",
+  "population": 114963583,
+  "area": 1104300,
+  "flag": "🇪🇹",
+  "languages": {
+   "amh": "Amharic"
+  },
+  "currencies": {
+   "ETB": {
+    "name": "Ethiopian birr",
+    "symbol": "Br"
+   }
+  }
+ },
+ {
+  "name": {
+   "common": "Egypt",
+   "official": "Egypt"
+  },
+  "cca3": "EGY",
+  "capital": [
+   "Cairo"
+  ],
+  "region": "Africa",
+  "subregion": "",
+  "population": 102334403,
+  "area": 1002450,
+  "flag": "🇪🇬",
+  "languages": {
+   "ara": "Arabic"
+  },
+  "currencies": {
+   "EGP": {
+    "name": "Egyptian pound",
+    "symbol": "£"
+   }
+  }
+ },
+ {
+  "name": {
+   "common": "Germany",
+   "official": "Germany"
+  },
+  "cca3": "DEU",
+  "capital": [
+   "Berlin"
+  ],
+  "region": "Europe",
+  "subregion": "",
+  "population": 83240525,
+  "area": 357114,
+  "flag": "🇩🇪",
+  "languages": {
+   "deu": "German"
+  },
+  "currencies": {
+   "EUR": {
+    "name": "Euro",
+    "symbol": "€"
+   }
+  }
+ },
+ {
+  "name": {
+   "common": "Turkey",
+   "official": "Turkey"
+  },
+  "cca3": "TUR",
+  "capital": [
+   "Ankara"
+  ],
+  "region": "Asia",
+  "subregion": "",
+  "population": 84339067,
+  "area": 783562,
+  "flag": "🇹🇷",
+  "languages": {
+   "tur": "Turkish"
+  },
+  "currencies": {
+   "TRY": {
+    "name": "Turkish lira",
+    "symbol": "₺"
+   }
+  }
+ },
+ {
+  "name": {
+   "common": "France",
+   "official": "France"
+  },
+  "cca3": "FRA",
+  "capital": [
+   "Paris"
+  ],
+  "region": "Europe",
+  "subregion": "",
+  "population": 67391582,
+  "area": 551695,
+  "flag": "🇫🇷",
+  "languages": {
+   "fra": "French"
+  },
+  "currencies": {
+   "EUR": {
+    "name": "Euro",
+    "symbol": "€"
+   }
+  }
+ },
+ {
+  "name": {
+   "common": "United Kingdom",
+   "official": "United Kingdom"
+  },
+  "cca3": "GBR",
+  "capital": [
+   "London"
+  ],
+  "region": "Europe",
+  "subregion": "",
+  "population": 67215293,
+  "area": 242900,
+  "flag": "🇬🇧",
+  "languages": {
+   "eng": "English"
+  },
+  "currencies": {
+   "GBP": {
+    "name": "British pound",
+    "symbol": "£"
+   }
+  }
+ },
+ {
+  "name": {
+   "common": "Italy",
+   "official": "Italy"
+  },
+  "cca3": "ITA",
+  "capital": [
+   "Rome"
+  ],
+  "region": "Europe",
+  "subregion": "",
+  "population": 59554023,
+  "area": 301336,
+  "flag": "🇮🇹",
+  "languages": {
+   "ita": "Italian"
+  },
+  "currencies": {
+   "EUR": {
+    "name": "Euro",
+    "symbol": "€"
+   }
+  }
+ },
+ {
+  "name": {
+   "common": "South Africa",
+   "official": "South Africa"
+  },
+  "cca3": "ZAF",
+  "capital": [
+   "Pretoria"
+  ],
+  "region": "Africa",
+  "subregion": "",
+  "population": 59308690,
+  "area": 1221037,
+  "flag": "🇿🇦",
+  "languages": {
+   "afr": "Afrikaans",
+   "eng": "English",
+   "zul": "Zulu",
+   "xho": "Xhosa"
+  },
+  "currencies": {
+   "ZAR": {
+    "name": "South African rand",
+    "symbol": "R"
+   }
+  }
+ },
+ {
+  "name": {
+   "common": "Kenya",
+   "official": "Kenya"
+  },
+  "cca3": "KEN",
+  "capital": [
+   "Nairobi"
+  ],
+  "region": "Africa",
+  "subregion": "",
+  "population": 53771300,
+  "area": 580367,
+  "flag": "🇰🇪",
+  "languages": {
+   "eng": "English",
+   "swa": "Swahili"
+  },
+  "currencies": {
+   "KES": {
+    "name": "Kenyan shilling",
+    "symbol": "Sh"
+   }
+  }
+ },
+ {
+  "name": {
+   "common": "Argentina",
+   "official": "Argentina"
+  },
+  "cca3": "ARG",
+  "capital": [
+   "Buenos Aires"
+  ],
+  "region": "Americas",
+  "subregion": "",
+  "population": 45376763,
+  "area": 2780400,
+  "flag": "🇦🇷",
+  "languages": {
+   "spa": "Spanish"
+  },
+  "currencies": {
+   "ARS": {
+    "name": "Argentine peso",
+    "symbol": "$"
+   }
+  }
+ },
+ {
+  "name": {
+   "common": "Canada",
+   "official": "Canada"
+  },
+  "cca3": "CAN",
+  "capital": [
+   "Ottawa"
+  ],
+  "region": "Americas",
+  "subregion": "",
+  "population": 38005238,
+  "area": 9984670,
+  "flag": "🇨🇦",
+  "languages": {
+   "eng": "English",
+   "fra": "French"
+  },
+  "currencies": {
+   "CAD": {
+    "name": "Canadian dollar",
+    "symbol": "$"
+   }
+  }
+ },
+ {
+  "name": {
+   "common": "Australia",
+   "official": "Australia"
+  },
+  "cca3": "AUS",
+  "capital": [
+   "Canberra"
+  ],
+  "region": "Oceania",
+  "subregion": "",
+  "population": 25687041,
+  "area": 7692024,
+  "flag": "🇦🇺",
+  "languages": {
+   "eng": "English"
+  },
+  "currencies": {
+   "AUD": {
+    "name": "Australian dollar",
+    "symbol": "$"
+   }
+  }
+ },
+ {
+  "name": {
+   "common": "Switzerland",
+   "official": "Switzerland"
+  },
+  "cca3": "CHE",
+  "capital": [
+   "Bern"
+  ],
+  "region": "Europe",
+  "subregion": "",
+  "population": 8654622,
+  "area": 41284,
+  "flag": "🇨🇭",
+  "languages": {
+   "fra": "French",
+   "gsw": "Swiss German",
+   "ita": "Italian",
+   "roh": "Romansh"
+  },
+  "currencies": {
+   "CHF": {
+    "name": "Swiss franc",
+    "symbol": "Fr."
+   }
+  }
+ },
+ {
+  "name": {
+   "common": "Singapore",
+   "official": "Singapore"
+  },
+  "cca3": "SGP",
+  "capital": [
+   "Singapore"
+  ],
+  "region": "Asia",
+  "subregion": "",
+  "population": 5685807,
+  "area": 710,
+  "flag": "🇸🇬",
+  "languages": {
+   "eng": "English",
+   "msa": "Malay",
+   "zho": "Chinese",
+   "tam": "Tamil"
+  },
+  "currencies": {
+   "SGD": {
+    "name": "Singapore dollar",
+    "symbol": "$"
+   }
+  }
+ },
+ {
+  "name": {
+   "common": "New Zealand",
+   "official": "New Zealand"
+  },
+  "cca3": "NZL",
+  "capital": [
+   "Wellington"
+  ],
+  "region": "Oceania",
+  "subregion": "",
+  "population": 5084300,
+  "area": 270467,
+  "flag": "🇳🇿",
+  "languages": {
+   "eng": "English",
+   "mri": "Māori",
+   "nzs": "New Zealand Sign Language"
+  },
+  "currencies": {
+   "NZD": {
+    "name": "New Zealand dollar",
+    "symbol": "$"
+   }
+  }
+ },
+ {
+  "name": {
+   "common": "Iceland",
+   "official": "Iceland"
+  },
+  "cca3": "ISL",
+  "capital": [
+   "Reykjavik"
+  ],
+  "region": "Europe",
+  "subregion": "",
+  "population": 366425,
+  "area": 103000,
+  "flag": "🇮🇸",
+  "languages": {
+   "isl": "Icelandic"
+  },
+  "currencies": {
+   "ISK": {
+    "name": "Icelandic króna",
+    "symbol": "kr"
+   }
+  }
+ },
+ {
+  "name": {
+   "common": "Fiji",
+   "official": "Fiji"
+  },
+  "cca3": "FJI",
+  "capital": [
+   "Suva"
+  ],
+  "region": "Oceania",
+  "subregion": "",
+  "population": 896444,
+  "area": 18272,
+  "flag": "🇫🇯",
+  "languages": {
+   "eng": "English",
+   "fij": "Fijian",
+   "hif": "Fiji Hindi"
+  },
+  "currencies": {
+   "FJD": {
+    "name": "Fijian dollar",
+    "symbol": "$"
+   }
+  }
+ },
+ {
+  "name": {
+   "common": "Antarctica",
+   "official": "Antarctica"
+  },
+  "cca3": "ATA",
+  "capital": [],
+  "region": "Antarctic",
+  "subregion": "",
+  "population": 1000,
+  "area": 14000000,
+  "flag": "🇦🇶",
+  "languages": {},
+  "currencies": {}
+ },
+ {
+  "name": {
+   "common": "Bhutan",
+   "official": "Bhutan"
+  },
+  "cca3": "BTN",
+  "capital": [
+   "Thimphu"
+  ],
+  "region": "Asia",
+  "subregion": "",
+  "population": 771612,
+  "area": 38394,
+  "flag": "🇧🇹",
+  "languages": {
+   "dzo": "Dzongkha"
+  },
+  "currencies": {
+   "BTN": {
+    "name": "Bhutanese ngultrum",
+    "symbol": "Nu."
+   },
+   "INR": {
+    "name": "Indian rupee",
+    "symbol": "₹"
+   }
+  }
+ }
+]

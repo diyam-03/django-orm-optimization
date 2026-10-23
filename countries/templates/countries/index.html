@@ -1,0 +1,157 @@
+{% load static %}<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Query Lab: Django ORM and database optimisation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'countries/app.css' %}">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <span class="mark" aria-hidden="true"></span>
+    <span class="name">Query Lab</span>
+    <span class="sub">Django ORM and PostgreSQL optimisation</span>
+  </div>
+  <div class="chips" id="chips" aria-live="polite"></div>
+</header>
+
+<div class="shell">
+  <nav class="rail" aria-label="Sections">
+    <ol>
+      <li><a href="#race"><b>1</b><span>The problem</span></a></li>
+      <li><a href="#fix"><b>2</b><span>The fix</span></a></li>
+      <li><a href="#index"><b>3</b><span>Indexes</span></a></li>
+      <li><a href="#research"><b>4</b><span>Research answers</span></a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <!-- 1. THE PROBLEM ------------------------------------------------- -->
+    <section id="race" class="block">
+      <h1 id="headline">Same countries, same page. Two ways to ask the database.</h1>
+      <p class="lede">Each lane below loads one page of the countries list through the real API. Every line on the paper tape is one SQL query that Django sent to PostgreSQL while building that page.</p>
+
+      <div class="controls">
+        <label for="limit">Countries on the page</label>
+        <input id="limit" type="range" min="5" max="250" step="5" value="50">
+        <output id="limitOut" for="limit">50</output>
+        <button id="runBtn" class="btn" type="button">Run both again</button>
+      </div>
+
+      <div class="race">
+        <article class="lane slow" id="laneSlow" aria-labelledby="slowTitle">
+          <header>
+            <h2 id="slowTitle">Before: one query per field</h2>
+            <p>Plain <code>Country.objects.all()</code>. Django fetches related data only when the serializer asks for it.</p>
+          </header>
+          <dl class="meters">
+            <div><dt>queries</dt><dd data-m="count">0</dd></div>
+            <div><dt>time in database</dt><dd><span data-m="db">0</span><small>ms</small></dd></div>
+            <div><dt>whole request</dt><dd><span data-m="total">0</span><small>ms</small></dd></div>
+          </dl>
+          <div class="tape" tabindex="0" aria-label="SQL queries for the slow endpoint"><ol data-tape></ol></div>
+        </article>
+
+        <article class="lane fast" id="laneFast" aria-labelledby="fastTitle">
+          <header>
+            <h2 id="fastTitle">After: told up front what to load</h2>
+            <p><code>select_related</code> and <code>prefetch_related</code> collect everything in a few queries.</p>
+          </header>
+          <dl class="meters">
+            <div><dt>queries</dt><dd data-m="count">0</dd></div>
+            <div><dt>time in database</dt><dd><span data-m="db">0</span><small>ms</small></dd></div>
+            <div><dt>whole request</dt><dd><span data-m="total">0</span><small>ms</small></dd></div>
+          </dl>
+          <div class="tape" tabindex="0" aria-label="SQL queries for the fast endpoint"><ol data-tape></ol></div>
+        </article>
+      </div>
+
+      <div class="anatomy" id="anatomy" hidden>
+        <h3>Where the slow queries go</h3>
+        <div class="stack" id="stack"></div>
+        <ul class="legend" id="legend"></ul>
+        <p class="note" id="anatomyNote"></p>
+      </div>
+    </section>
+
+    <!-- 2. THE FIX ----------------------------------------------------- -->
+    <section id="fix" class="block">
+      <h2>The fix is two extra words on the queryset</h2>
+      <div class="codes">
+        <figure>
+          <figcaption>Slow endpoint</figcaption>
+<pre><code>countries = Country.objects.all()
+
+# For every country the serializer then reads:
+#   country.region.name        1 new query
+#   country.languages.all()    1 new query
+#   country.currencies.all()   1 new query</code></pre>
+        </figure>
+        <figure>
+          <figcaption>Fast endpoint</figcaption>
+<pre><code>countries = (
+    Country.objects
+    .select_related("region")
+    .prefetch_related("languages", "currencies")
+)</code></pre>
+        </figure>
+      </div>
+
+      <div class="twins">
+        <div>
+          <h3><code>select_related</code> joins the table</h3>
+          <p>A country has exactly one region, so the region comes back in the same query as the country, through a SQL <code>JOIN</code>. Use it for foreign keys and one-to-one links.</p>
+        </div>
+        <div>
+          <h3><code>prefetch_related</code> batches the lookups</h3>
+          <p>A country has many languages, so a join would repeat every country row. Django instead runs one extra query for all the languages at once and matches them to countries in Python. Use it for many-to-many and reverse foreign keys.</p>
+        </div>
+      </div>
+
+      <h3 class="sub-h">The real queries behind the fast endpoint</h3>
+      <ol class="fastsql" id="fastSql"><li class="muted">Run the comparison above to see them.</li></ol>
+    </section>
+
+    <!-- 3. INDEXES ----------------------------------------------------- -->
+    <section id="index" class="block">
+      <h2>Indexes: how much faster, and what they cost</h2>
+      <p class="lede">The same three queries run twice on this database. First with the indexes defined in <code>models.py</code>, then with them dropped inside a transaction that is rolled back, so nothing is changed.</p>
+
+      <div class="controls">
+        <button id="idxBtn" class="btn" type="button">Run index benchmark</button>
+        <button id="inflateBtn" class="btn ghost" type="button">Add 200,000 test rows</button>
+        <button id="resetBtn" class="btn ghost" type="button">Remove test rows</button>
+        <span class="status" id="idxStatus" role="status"></span>
+      </div>
+
+      <div id="idxOut"></div>
+    </section>
+
+    <!-- 4. RESEARCH ---------------------------------------------------- -->
+    <section id="research" class="block">
+      <h2>Research answers</h2>
+      <details open>
+        <summary>What is the N+1 problem?</summary>
+        <p>You run 1 query to get a list of N items, then 1 more query for each item to get something related to it, so N+1 queries in total. In Django it hides in innocent code such as <code>country.region.name</code> inside a loop or a serializer. It is harmless with 10 rows and painful with 10,000, because every query pays a network round trip and parsing cost, even when each one is tiny.</p>
+      </details>
+      <details>
+        <summary>select_related vs prefetch_related</summary>
+        <p><code>select_related</code> follows single-valued links (foreign key, one-to-one) and loads them with a <code>JOIN</code> in the same query. <code>prefetch_related</code> handles multi-valued links (many-to-many, reverse foreign key): it runs one separate query per relationship using <code>WHERE id IN (...)</code>, then joins the results in Python. Result in this project: 1 + 3N queries become 3.</p>
+      </details>
+      <details>
+        <summary>How does an index speed up a query, and what does it cost?</summary>
+        <p>Without an index PostgreSQL reads every row (a sequential scan). An index is a sorted structure, a B-tree, that lets it jump to matching rows, like the index at the back of a book. The cost: extra disk space for each index, and slower <code>INSERT</code>, <code>UPDATE</code> and <code>DELETE</code> because every index must be updated too. Index the columns you filter or sort by often, not everything.</p>
+      </details>
+    </section>
+  </main>
+</div>
+
+<footer class="foot">Data from restcountries.com. Built with Django, Django REST Framework and PostgreSQL.</footer>
+
+<script src="{% static 'countries/app.js' %}"></script>
+</body>
+</html>

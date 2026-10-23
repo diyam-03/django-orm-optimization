@@ -1,0 +1,29 @@
+# Render Blueprint: creates the database AND the web service in one go.
+databases:
+  - name: querylab-db
+    databaseName: querylab
+    user: querylab
+    plan: free
+
+services:
+  - type: web
+    name: querylab
+    runtime: python
+    plan: free
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn querylab.wsgi:application"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.3
+      - key: DATABASE_URL
+        fromDatabase:
+          name: querylab-db
+          property: connectionString
+      - key: DJANGO_SECRET_KEY
+        generateValue: true
+      - key: DJANGO_DEBUG
+        value: "0"
+      - key: DEMO_TOOLS
+        value: "1"
+      - key: RESTCOUNTRIES_API_KEY
+        sync: false   # Render asks you to paste your key when you apply the Blueprint
