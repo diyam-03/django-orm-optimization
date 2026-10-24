@@ -2,7 +2,7 @@
 
 Loads the REST Countries dataset into PostgreSQL through the Django ORM, finds and fixes an N+1 query problem, adds indexes, and measures every change with before and after timings.
 
-**Live Demo:** [Click Here](https://querylab-m11i.onrender.com)
+**Live Demo:**  https://querylab-m11i.onrender.com
 
 ## What it shows
 
